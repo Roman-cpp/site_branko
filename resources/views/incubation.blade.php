@@ -3,9 +3,9 @@
 @section('title_block', 'Branko - О нас@endsection')
 
 @section('navigation')
-    <li><a href="{{ route('home') }}">о нас</a></li>
-    <li class="current"><a href="{{ route('incubation') }}">инкубирование</a></li>
-    <li><a href="{{ route('contact') }}">контакты</a></li>
+    <li><a href="/">о нас</a></li>
+    <li class="current"><a href="/incubation">инкубирование</a></li>
+    <li><a href="/contact">контакты</a></li>
 @endsection
 
 @section('content')

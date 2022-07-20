@@ -27,10 +27,10 @@
         <hr />
         <p class="copyright pull-left">© ООО «Бранко Рус», 2021. Coded by <a href="http://it-pskov.ru/">IT Nova.</a>.</p>
         <ul class="footer-menu pull-right">
-            <li><a href="{{ route('home') }}">о нас</a></li>
-            <li><a href="{{ route('incubation') }}">инкубирование</a></li>
-            <li><a href="{{ route('contact') }}">контакты</a></li>
-            <li><a class="post-title" href="{{ route('login') }}">войти</a></li>
+            <li><a href="\">о нас</a></li>
+            <li><a href="/incubation">инкубирование</a></li>
+            <li><a href="/contact">контакты</a></li>
+            <li><a class="post-title" href="/login">войти</a></li>
         </ul>
     </div>
     <!-- .container -->

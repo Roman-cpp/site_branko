@@ -37,9 +37,9 @@
             <!-- /.navbar-header -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('home') }}">о нас</a></li>
-                    <li><a href="{{ route('incubation') }}">инкубирование</a></li>
-                    <li class="current"><a href="{{ route('contact') }}">контакты</a></li>
+                    <li><a href="\">о нас</a></li>
+                    <li><a href="/incubation">инкубирование</a></li>
+                    <li class="current"><a href="/contact">контакты</a></li>
                 </ul>
                 <!-- /.navbar-nav -->
             </div>
@@ -75,7 +75,8 @@
             </ul>
             <div class="divide50"></div>
             <div class="form-container">
-                <form action="contact/vanilla-form.php" method="post" class="vanilla vanilla-form" novalidate="novalidate">
+                <form action="/contact/send" method="post" class="vanilla vanilla-form" novalidate="novalidate">
+                    @csrf
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-field">
@@ -98,7 +99,7 @@
                         <div class="col-sm-6">
                             <div class="form-field">
                                 <label>
-                                    <input type="tel" name="tel" placeholder="Телефон">
+                                    <input type="tel" name="phone" placeholder="Телефон">
                                     <i class="icon-phone"></i></label>
                             </div>
                             <!--/.form-field -->
@@ -107,7 +108,7 @@
                         <div class="col-sm-6">
                             <div class="form-field">
                                 <label class="custom-select">
-                                    <select name="department" required="required">
+                                    <select name="theme" required="required">
                                         <option value="">Выберите тему</option>
                                         <option value="Sales">Сотрудничество</option>
                                         <option value="Marketing">Поддержка</option>

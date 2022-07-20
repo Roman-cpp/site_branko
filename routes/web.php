@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\Test;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Branko;
+use App\Http\Controllers\BrankoIncubation;
+use App\Http\Controllers\BrankoContact;
+use App\Http\Controllers\Login;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', [Branko::class, 'show']);
 
-Route::get('/incubation', function () {
-    return view('incubation');
-})->name('incubation');
+Route::get('/incubation', [BrankoIncubation::class, 'show']);
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+Route::get('/contact', [BrankoContact::class, 'show']);
 
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+Route::get('/test', [Test::class, 'show']);
+Route::post('/test/send', [Test::class, 'insert']);
+
+Route::get('/login', [Login::class, 'show']);
