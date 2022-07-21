@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Proposal;
 use Illuminate\Http\Request;
 
-class Login extends Controller
+class LoginController extends Controller
 {
     public function show() {
         return view('login');

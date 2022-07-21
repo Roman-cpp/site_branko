@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 
-class BrankoIncubation extends Controller
+class BrankoContactController extends Controller
 {
     public function show() {
-        return view('incubation');
+        return view('contact');
     }
+
 }

@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\EditController;
 use App\Http\Controllers\Test;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Branko;
-use App\Http\Controllers\BrankoIncubation;
-use App\Http\Controllers\BrankoContact;
-use App\Http\Controllers\Login;
+use App\Http\Controllers\BrankoController;
+use App\Http\Controllers\BrankoIncubationController;
+use App\Http\Controllers\BrankoContactController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,13 +19,25 @@ use App\Http\Controllers\Login;
 |
 */
 
-Route::get('/', [Branko::class, 'show']);
+Route::get('/', [BrankoController::class, 'show']);
 
-Route::get('/incubation', [BrankoIncubation::class, 'show']);
+Route::get('/incubation', [BrankoIncubationController::class, 'show']);
 
-Route::get('/contact', [BrankoContact::class, 'show']);
+Route::get('/contact', [BrankoContactController::class, 'show']);
 
-Route::get('/test', [Test::class, 'show']);
-Route::post('/test/send', [Test::class, 'insert']);
+Route::resource('/edit', EditController::class);
 
-Route::get('/login', [Login::class, 'show']);
+
+
+
+
+
+//work form
+Route::post('/test/send', [Test::class, 'insertProposal']);
+
+//work file
+Route::post('/file/send', [Test::class, 'insertImg']);
+
+Route::get('/login', [LoginController::class, 'show']);
+
+Route::resource('list_form', TestController::class);
