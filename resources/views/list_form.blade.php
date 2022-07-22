@@ -4,7 +4,11 @@
     <meta charset="utf-8">
 </head>
 <body>
-<a href="1" style="background: #5aa8cd; color: #FFFFFF; text-decoration: none; font-size: 60px;">form</a> <br>
-<a href="2" style="background: #5aa8cd; color: #FFFFFF; text-decoration: none; font-size: 60px;">form file</a> <br>
+<form>
+    <input type="file">
+    <input src="\style\images\logo-dark.png" type="image">
+</form>
+
+<img src="/storage/image/t1VpmdCQxeYAQehRMWf4RoJynEaIbKLQs0VROWax.png">
 </body>
 </html>

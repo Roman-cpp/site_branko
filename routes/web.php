@@ -25,19 +25,27 @@ Route::get('/incubation', [BrankoIncubationController::class, 'show']);
 
 Route::get('/contact', [BrankoContactController::class, 'show']);
 
-Route::resource('/edit', EditController::class);
+Route::get('/login', [LoginController::class, 'show']);
+
+Route::get('/edit/{id?}', [EditController::class, 'show']);
 
 
 
 
+Route::resource('gallery', EditController::class);
 
 
+
+
+/**
 //work form
 Route::post('/test/send', [Test::class, 'insertProposal']);
+
+Route::get('/test2/{id}', [Test::class, 'showform2']);
 
 //work file
 Route::post('/file/send', [Test::class, 'insertImg']);
 
-Route::get('/login', [LoginController::class, 'show']);
 
-Route::resource('list_form', TestController::class);
+
+Route::resource('list_form', TestController::class);*/

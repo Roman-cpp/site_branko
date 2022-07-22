@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class BrankoContactController extends Controller
 {
-    public function show() {
+    public function show()
+    {
         return view('contact');
     }
 

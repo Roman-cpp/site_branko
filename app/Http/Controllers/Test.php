@@ -39,4 +39,9 @@ class Test extends Controller
         $request->file('file')->store('', 'public');
         return redirect()->back();
     }
+
+    public function showForm2($id)
+    {
+        return view(route('login'));
+    }
 }
