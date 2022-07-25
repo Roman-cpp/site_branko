@@ -21,14 +21,11 @@ class StorePostRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules():array
     {
         return [
-            'name' => ['between:3,10'],
-            'email' => ['max:50'],
-            'phone' => ['max:50'],
-            'theme' => ['max:50'],
-            'message' => ['min:1']
+            'image' => ['filled'],
+            'theme' => ['filled'],
         ];
     }
 }

@@ -1,13 +1,13 @@
 <?php
 
 use App\Http\Controllers\EditController;
-use App\Http\Controllers\Test;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\GalleryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BrankoController;
 use App\Http\Controllers\BrankoIncubationController;
 use App\Http\Controllers\BrankoContactController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MainBlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,25 +27,12 @@ Route::get('/contact', [BrankoContactController::class, 'show']);
 
 Route::get('/login', [LoginController::class, 'show']);
 
-Route::get('/edit/{id?}', [EditController::class, 'show']);
+Route::prefix('edit')->group(function () {
+    Route::get('/', [EditController::class,'show'])->name('edit');
 
+    Route::resource('gallery', GalleryController::class);
 
+    Route::resource('mainBlog', MainBlogController::class);
 
+});
 
-Route::resource('gallery', EditController::class);
-
-
-
-
-/**
-//work form
-Route::post('/test/send', [Test::class, 'insertProposal']);
-
-Route::get('/test2/{id}', [Test::class, 'showform2']);
-
-//work file
-Route::post('/file/send', [Test::class, 'insertImg']);
-
-
-
-Route::resource('list_form', TestController::class);*/

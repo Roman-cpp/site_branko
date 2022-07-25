@@ -132,10 +132,8 @@
         <!-- /.container -->
     </div>
     <!-- /.light-wrapper -->
-
-    @include('include.footers')
-    <!-- /footer -->
 </div>
+@include('include.footers')
 <!--/.body-wrapper -->
 <script src="style/js/jquery.min.js"></script>
 <script src="style/js/bootstrap.min.js"></script>

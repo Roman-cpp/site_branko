@@ -5,7 +5,7 @@
 @section('content')
     <div class="container inner">
         <div class="form-container">
-            <form action="{{route('edit.store')}}" method="post" class="vanilla vanilla-form" enctype="multipart/form-data" novalidate="novalidate">
+            <form action="{{route('gallery.store')}}" method="post" class="vanilla vanilla-form" enctype="multipart/form-data" novalidate="novalidate">
                 @csrf
                 <input type="hidden" name="operation" value="galleryAdd">
                 <div class="col-sm-6">
@@ -14,9 +14,7 @@
                                 <input type="file" name="image">
                                 <i class="budicon-image"></i></label>
                         </div>
-                        <!--/.form-field -->
                     </div>
-                    <!--/column -->
                     <div class="col-sm-6">
                         <div class="form-field">
                             <label class="custom-select">
@@ -25,15 +23,13 @@
                                     <option value="provision">Обеспечение</option>
                                     <option value="products">Продукция</option>
                                 </select>
-                                <i class="icon-ok"></i><span><!-- fake select handler --></span> </label>
+                                <i class="icon-ok"></i><span></span> </label>
                         </div>
-                        <!--/.form-field -->
                     </div>
-                    <!--/column -->
                 <input type="submit" class="btn" value="Отправить" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">
-                <footer class="notification-box"></footer>
             </form>
         </div>
     </div>
 
+    <div class="tp-caption sfr" data-x="30" data-y="470" data-speed="900" data-start="2200" data-easing="Sine.easeOut"  data-endspeed="100"><a href="{{route('gallery.index')}}" class="btn btn-large btn-blue">вернуться</a></div>
 @endsection

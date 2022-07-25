@@ -70,7 +70,7 @@
     </div>
 </div>
 
-<div class="tp-caption sfr" data-x="30" data-y="470" data-speed="900" data-start="2200" data-easing="Sine.easeOut"  data-endspeed="100"><a href="" class="btn btn-large btn-blue">Иди прямо</a></div>
+<div class="tp-caption sfr" data-x="30" data-y="470" data-speed="900" data-start="2200" data-easing="Sine.easeOut"  data-endspeed="100"><a href="{{route('edit')}}" class="btn btn-large btn-blue">Иди прямо</a></div>
 
 <script src="style/js/jquery.min.js"></script>
 <script src="style/js/bootstrap.min.js"></script>

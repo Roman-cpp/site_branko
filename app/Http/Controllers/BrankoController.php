@@ -10,6 +10,6 @@ class BrankoController extends Controller
     public function show():View
     {
         $data = Image::all();
-        return view('index', ['images' => $data]);
+        return view('index', ['images' => 'adf']);
     }
 }

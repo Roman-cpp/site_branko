@@ -12,7 +12,7 @@
     @include('content.main-blog')
     @include('content.autobiography')
     @include('content.inverse-wrapper')
-    @include('content.gallery')
+    <x-gallery type="error" :message="$images"/>
     @include('content.inverse-wrapper2')
 
     <div class="light-wrapper">

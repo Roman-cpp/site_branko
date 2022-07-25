@@ -10,13 +10,13 @@
 
 @section('content')
     @include('content.main-blog')
-    <div class="tp-caption sfr" data-x="30" data-y="470" data-speed="900" data-start="2200" data-easing="Sine.easeOut"  data-endspeed="100"><a href="#" class="btn btn-large btn-blue">Редактировать</a></div>
+    <div class="tp-caption sfr" data-x="30" data-y="470" data-speed="900" data-start="2200" data-easing="Sine.easeOut"  data-endspeed="100"><a href="{{route('mainBlog.index')}}" class="btn btn-large btn-blue">Редактировать</a></div>
     @include('content.autobiography')
     <div class="tp-caption sfr" data-x="30" data-y="470" data-speed="900" data-start="2200" data-easing="Sine.easeOut"  data-endspeed="100"><a href="#" class="btn btn-large btn-blue">Редактировать</a></div>
     @include('content.inverse-wrapper')
     <div class="tp-caption sfr" data-x="30" data-y="470" data-speed="900" data-start="2200" data-easing="Sine.easeOut"  data-endspeed="100"><a href="#" class="btn btn-large btn-blue">Редактировать</a></div>
     @include('content.gallery')
-    <div class="tp-caption sfr" data-x="30" data-y="470" data-speed="900" data-start="2200" data-easing="Sine.easeOut"  data-endspeed="100"><a href="/edit/gallery" class="btn btn-large btn-blue">Редактировать</a></div>
+    <div class="tp-caption sfr" data-x="30" data-y="470" data-speed="900" data-start="2200" data-easing="Sine.easeOut"  data-endspeed="100"><a href="{{route('gallery.index')}}" class="btn btn-large btn-blue">Редактировать</a></div>
     @include('content.inverse-wrapper2')
     <div class="tp-caption sfr" data-x="30" data-y="470" data-speed="900" data-start="2200" data-easing="Sine.easeOut"  data-endspeed="100"><a href="#" class="btn btn-large btn-blue">Редактировать</a></div>
 
