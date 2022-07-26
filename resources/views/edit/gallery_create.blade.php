@@ -9,23 +9,25 @@
                 @csrf
                 <input type="hidden" name="operation" value="galleryAdd">
                 <div class="col-sm-6">
-                        <div class="form-field">
-                            <label>
-                                <input type="file" name="image">
-                                <i class="budicon-image"></i></label>
-                        </div>
+                    <div class="form-field">
+                        <label class="btn">
+                            <input type="file"  name="image" placeholder="Телефон" style="display: none">
+                            <div>выберите файл</div>
+                        </label>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="form-field">
-                            <label class="custom-select">
-                                <select name="theme" required="required">
-                                    <option value="">Выберите тему</option>
-                                    <option value="provision">Обеспечение</option>
-                                    <option value="products">Продукция</option>
-                                </select>
-                                <i class="icon-ok"></i><span></span> </label>
-                        </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-field">
+                        <label class="custom-select">
+                            <select name="theme" required="required">
+                                <option value="">Выберите тему</option>
+                                <option value="provision">Обеспечение</option>
+                                <option value="products">Продукция</option>
+                            </select>
+                            <i class="icon-ok"></i><span></span>
+                        </label>
                     </div>
+                </div>
                 <input type="submit" class="btn" value="Отправить" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">
             </form>
         </div>

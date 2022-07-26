@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
+use App\Models\Gallery;
 use App\Models\Image;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class GalleryController extends Controller
      */
     public function index(): view
     {
-        return view('edit.gallery', ['images' => Image::all()]);
+        $data = new Gallery();
+        return view('edit.gallery', ['images' => $data->allImg()]);
     }
 
     /**
@@ -40,9 +42,12 @@ class GalleryController extends Controller
     public function store(StorePostRequest $request): RedirectResponse
     {
         $name = $request->file('image')->store('image', 'public');
+
+        $group = Gallery::while
+
         Image::create([
-            'theme' => $request->theme,
-            'name' => $name,
+            'file_name' => $name,
+            'gallery_id' => Gallery::where('name', $request->theme)->get()[0]['id'],
         ]);
         return redirect()->back();
     }

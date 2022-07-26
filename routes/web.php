@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\GalleryController;
+use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BrankoController;
 use App\Http\Controllers\BrankoIncubationController;
@@ -34,5 +35,14 @@ Route::prefix('edit')->group(function () {
 
     Route::resource('mainBlog', MainBlogController::class);
 
+});
+
+Route::get('test', function () {
+    $comments =  Gallery::find(1)->allImg;
+    //echo $comments;
+    foreach ($comments as $com) {
+        echo '_____<br>';
+        echo $com;
+    }
 });
 

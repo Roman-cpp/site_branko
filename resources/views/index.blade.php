@@ -9,16 +9,17 @@
 @endsection
 
 @section('content')
-    @include('content.main-blog')
-    @include('content.autobiography')
-    @include('content.inverse-wrapper')
-    <x-gallery type="error" :message="$images"/>
-    @include('content.inverse-wrapper2')
+
+    <x-main_blog/>
+    <x-autobiography/>
+    <x-inverse_wrapper1/>
+    <x-gallery :images="$images"/>
+    <x-inverse_wrapper2/>
 
     <div class="light-wrapper">
-        @include('content.news')
-        @include('content.about-company')
-        @include('content.process-model')
+        <x-news/>
+        <x-about-company/>
+        <x-process-model/>
     </div>
 
 @endsection

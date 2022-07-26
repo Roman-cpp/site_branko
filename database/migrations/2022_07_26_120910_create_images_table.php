@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('theme');
-            $table->string('name');
+            $table->string('file_name');
             $table->timestamps();
+            $table->foreignId('gallery_id')
+                ->constrained('galleries')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

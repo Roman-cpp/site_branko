@@ -22,9 +22,9 @@ class MainBlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create():view
     {
-        //
+        return view('edit.main_blog_edit');
     }
 
     /**
