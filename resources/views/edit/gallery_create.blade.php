@@ -21,8 +21,9 @@
                         <label class="custom-select">
                             <select name="theme" required="required">
                                 <option value="">Выберите тему</option>
-                                <option value="provision">Обеспечение</option>
-                                <option value="products">Продукция</option>
+                                @foreach($themes as $theme)
+                                    <option value="{{$theme->id}}">{{$theme->name}}</option>
+                                @endforeach
                             </select>
                             <i class="icon-ok"></i><span></span>
                         </label>

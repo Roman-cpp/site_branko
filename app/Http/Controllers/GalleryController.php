@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;;
 use Illuminate\Support\Facades\Storage;
 
+
 class GalleryController extends Controller
 {
     /**
@@ -19,8 +20,7 @@ class GalleryController extends Controller
      */
     public function index(): view
     {
-        $data = new Gallery();
-        return view('edit.gallery', ['images' => $data->allImg()]);
+        return view('edit.gallery_edit', ['images' => Image::all()]);
     }
 
     /**
@@ -30,24 +30,23 @@ class GalleryController extends Controller
      */
     public function create():view
     {
-        return view('edit.gallery_create');
+        return view('edit.gallery_create', ['themes' =>Gallery::all()]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param StorePostRequest $request
      * @return RedirectResponse
      */
     public function store(StorePostRequest $request): RedirectResponse
     {
         $name = $request->file('image')->store('image', 'public');
 
-        $group = Gallery::while
 
         Image::create([
             'file_name' => $name,
-            'gallery_id' => Gallery::where('name', $request->theme)->get()[0]['id'],
+            'gallery_id' => $request->theme,
         ]);
         return redirect()->back();
     }
@@ -67,23 +66,30 @@ class GalleryController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return view
      */
-    public function edit($id)
+    public function edit(int $id):view
     {
-        //
+        return view('edit.gallery_update', ['image' =>Image::find($id)]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, int $id):RedirectResponse
     {
-        //
+        $image = Image::find($id);
+
+        $image->file_name = $request->file_name;
+        $image->gallery_id = $request->gallery_id;
+
+        $image->save();
+
+        return redirect()->route('gallery.index');
     }
 
     /**
@@ -100,6 +106,6 @@ class GalleryController extends Controller
 
         $model_img->delete();
 
-        return redirect()->back();
+        return redirect()->route('gallery.index');
     }
 }

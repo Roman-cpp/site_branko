@@ -3,6 +3,7 @@
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\GalleryController;
 use App\Models\Gallery;
+use App\Models\Image;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BrankoController;
 use App\Http\Controllers\BrankoIncubationController;
@@ -29,20 +30,16 @@ Route::get('/contact', [BrankoContactController::class, 'show']);
 Route::get('/login', [LoginController::class, 'show']);
 
 Route::prefix('edit')->group(function () {
-    Route::get('/', [EditController::class,'show'])->name('edit');
-
     Route::resource('gallery', GalleryController::class);
 
-    Route::resource('mainBlog', MainBlogController::class);
 
 });
 
 Route::get('test', function () {
-    $comments =  Gallery::find(1)->allImg;
-    //echo $comments;
-    foreach ($comments as $com) {
-        echo '_____<br>';
-        echo $com;
-    }
+   $data = new  Illuminate\Http\Request();
+
+   echo $data->ip();
+
+
 });
 
