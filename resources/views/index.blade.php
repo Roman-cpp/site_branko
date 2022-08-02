@@ -13,7 +13,7 @@
     <x-main_blog/>
     <x-autobiography/>
     <x-inverse_wrapper1/>
-    <x-gallery :images="$images"/>
+    <x-gallery :images="$images" :gallery="$gallery"/>
     <x-inverse_wrapper2/>
 
     <div class="light-wrapper">
