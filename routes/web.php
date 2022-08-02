@@ -45,10 +45,7 @@ Route::get('test', function () {
     return view('test', ['img' => '/storage/'.$img]);
 
 });
-/*
-Route::get('register', function () {
-   return view('auth.register');
-});*/
+
 
 
 Route::get('/profile', function () {
