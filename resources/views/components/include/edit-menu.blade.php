@@ -6,8 +6,8 @@
                 <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li role="presentation"><a href="#">изображения</a></li>
-                <li role="presentation" class="active"><a href="#">катигории</a></li>
+                <li role="presentation"> <a href="{{route('gallery.index')}}">катигории</a></li>
+                <li role="presentation"><a href="{{route('image.index')}}">изображения</a></li>
             </ul>
         </li>
     </ul>

@@ -24,6 +24,9 @@
 </head>
 
 <body>
+    @foreach($errors->all() as $error)
+        {{$error}}
+   @endforeach
     @yield('content')
 
     <script src="/style/js/jquery.min.js"></script>

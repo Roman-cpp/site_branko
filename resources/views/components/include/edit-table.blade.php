@@ -1,23 +1,23 @@
 <div  class="col-xs-10">
-    <a class="btn" href="{{route('gallery.create')}}">Добавить</a>
+    <a class="btn" href="{{route($action . '.create')}}">Добавить</a>
     <table class="table table-striped">
         <tr>
-            <th>id</th>
-            <th>file_name</th>
-            <th>gallery_id</th>
+            @foreach($columns as $column)
+                <th>{{$column}}</th>
+            @endforeach
             <th></th>
             <th></th>
         </tr>
         @foreach($model as $object)
             <tr>
-                <td> {{ $object->id }} </td>
-                <td> {{ $object->file_name }} </td>
-                <td> {{ $object->gallery_id }} </td>
+                @foreach($object as $key => $item)
+                <td> {{ $item }} </td>
+                @endforeach
                 <td>
-                    <a href="{{route('gallery.edit', [$object->id])}}"><button>изменить</button></a>
+                    <a href="{{route($action . '.edit', [$object['id']])}}"><button>изменить</button></a>
                 </td>
                 <td>
-                    <form method="POST" action="{{route('gallery.destroy', [$object->id])}}">
+                    <form method="POST" action="{{route($action .  '.destroy', [$object['id']])}}">
                         @csrf
                         @method('DELETE')
                         <input type="submit" value="удалить">
@@ -25,6 +25,5 @@
                 </td>
             </tr>
         @endforeach
-
     </table>
 </div>

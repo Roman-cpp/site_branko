@@ -2,10 +2,14 @@
 
 namespace App\Models;
 
+use App\Observers\GalleryObserver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property $images Collection Картинки в галерее.
+ */
 class Gallery extends Model
 {
     use HasFactory;
@@ -24,4 +28,7 @@ class Gallery extends Model
     {
         return $this->hasMany(Image::class);
     }
+
+
+
 }

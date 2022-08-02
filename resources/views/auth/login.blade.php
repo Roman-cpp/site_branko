@@ -25,9 +25,13 @@
 <body>
 <div class="container inner">
     <div class="container inner">
+        @foreach($errors->all() as $error)
+            {{$error}}
+        @endforeach
         <h1>Войти</h1>
         <p>Войдите в свой аккаунт, чтобы продолжить.</p>
         <form method="post" action="" class="text-left">
+            @csrf
             <input type="hidden" name="_token" value="5tN67t0m58gZtpGzFA1xF10zLUEVtYk0OuoVYA72">                                <input type="hidden" name="remember" value="on">
             <div class="form">
                 <div id="username-field" class="field-wrapper input">
@@ -35,10 +39,9 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                          stroke-linejoin="round" class="feather feather-user">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                         <circle cx="12" cy="7" r="4"></circle>
                     </svg>
-                    <input id="email" name="email" type="email" placeholder="user@example.com"
+                    <input id="email" name="username" type="email" placeholder="user@example.com"
                            class="form-control">
                 </div>
                 <div id="password-field" class="field-wrapper input mb-2">
