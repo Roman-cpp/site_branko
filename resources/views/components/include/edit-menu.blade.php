@@ -10,5 +10,11 @@
                 <li role="presentation"><a href="{{route('image.index')}}">изображения</a></li>
             </ul>
         </li>
+        <li>
+            <form method="post" action="{{route('logout')}}">
+                @csrf
+                <input type="submit" >
+            </form>
+        </li>
     </ul>
 </div>

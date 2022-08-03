@@ -47,11 +47,11 @@ class ImageController extends Controller
      */
     public function store(StorePostRequest $request): RedirectResponse
     {
-        $validated = $request->validated();
-        $file_name = $validated->file('image')->store('image', 'public');
+        //$validated = $request->validated();
+        $file_name = $request->file('image')->store('image', 'public');
         Image::create([
             'file_name' => $file_name,
-            'gallery_id' => $validated->gallery_id
+            'gallery_id' => $request->gallery_id
         ]);
         return redirect()->back();
     }

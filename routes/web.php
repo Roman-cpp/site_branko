@@ -32,17 +32,16 @@ Route::get('/contact', [BrankoContactController::class, 'show']);
 
 //Route::get('/login', [LoginController::class, 'show']);
 
-Route::prefix('edit')->group(function () {
+Route::prefix('edit')->middleware('auth')->group(function () {
     Route::resource('image', ImageController::class);
 
     Route::resource('gallery', GalleryController::class);
 });
 
 Route::get('test', function () {
-    //return view('test');
-    $img = "image/mJcKW5pN59MoFc0mDFHzHMPrsZBCwau62XNa32iz.jpg";
-    echo(asset($img));
-    return view('test', ['img' => '/storage/'.$img]);
+    $data = \App\Models\User::find(2);
+    dd( $data->role->id);
+
 
 });
 
